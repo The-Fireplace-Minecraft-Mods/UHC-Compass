@@ -1,0 +1,10 @@
+uhc.targetx=Target X
+uhc.targetx.tooltip=The X coordinate the compass will point at
+uhc.targetz=Target Z
+uhc.targetz.tooltip=The Z coordinate the compass will point at
+uhc.compassx=Compass X
+uhc.compassx.tooltip=The X coordinate of the compass on the screen, with respect to the alignment
+uhc.compassz=Compass Z
+uhc.compassz.tooltip=The Z coordinate of the compass on the screen, with respect to the alignment
+uhc.alignment=Alignment
+uhc.alignment.tooltip=The justification used to align the compass, useful when resizing the screen
