@@ -1,6 +1,7 @@
 package the_fireplace.uhccompass.config;
 
-import the_fireplace.uhccompass.Justification;
+import the_fireplace.uhccompass.XJust;
+import the_fireplace.uhccompass.YJust;
 
 /**
  * @author The_Fireplace
@@ -22,7 +23,11 @@ public class ConfigValues {
     public static int COMPASSY;
     public static final String COMPASSY_NAME = "uhc.compassy";
 
-    public static final Justification ALIGNMENT_DEFAULT = Justification.LEFT;
-    public static Justification ALIGNMENT;
-    public static final String ALIGNMENT_NAME = "uhc.alignment";
+    public static final XJust XALIGNMENT_DEFAULT = XJust.LEFT;
+    public static XJust XALIGNMENT;
+    public static final String XALIGNMENT_NAME = "uhc.xalignment";
+
+    public static final YJust YALIGNMENT_DEFAULT = YJust.TOP;
+    public static YJust YALIGNMENT;
+    public static final String YALIGNMENT_NAME = "uhc.yalignment";
 }

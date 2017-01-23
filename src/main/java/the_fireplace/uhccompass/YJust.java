@@ -3,10 +3,8 @@ package the_fireplace.uhccompass;
 /**
  * @author The_Fireplace
  */
-public enum Justification {
-    LEFT,
-    RIGHT,
+public enum YJust {
     TOP,
-    BOTTOM,
-    CENTER
+    CENTER,
+    BOTTOM
 }
