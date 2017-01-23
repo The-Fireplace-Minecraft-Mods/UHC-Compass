@@ -1,0 +1,163 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "Modmuss50"
+            url = "http://maven.modmuss50.me/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'ModsIOUpload:ModsIOUpload:+'
+    }
+}
+
+plugins {
+    id "com.matthewprenger.cursegradle" version "1.0.8"
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.cazzar.gradle.modsio'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+version = "1.0.0"
+group= "the_fireplace.uhccompass"
+archivesBaseName = "UHCCompass-1.8.9"
+
+allprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+minecraft {
+    version = "1.8.9-11.15.1.1902-1.8.9"
+    runDir = "run"
+    replace '${version}', project.version
+    mappings = "stable_22"
+}
+
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+task showVersion {
+    description "Displays the current version"
+    group "help"
+    
+    compileJava.dependsOn showVersion
+    deobfCompileDummyTask.dependsOn showVersion
+    extractMcpMappings.dependsOn showVersion
+  
+    doLast {
+        def versionFile = new File(buildDir, '.version');
+    
+        versionFile.getParentFile().mkdirs();
+        versionFile.text = version;
+    }
+    
+    outputs.upToDateWhen { false }
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+
+artifacts {
+    archives jar
+    archives deobfJar
+    archives sourceJar
+}
+
+curseforge {
+  apiKey = project.hasProperty("curseForgeApiKey")? project.curseForgeApiKey : "empty"
+  project {
+    id = '251732'
+    changelog = file('changelog.txt')
+    releaseType = 'beta'
+    addGameVersion '1.8.9'
+	addGameVersion 'Java 8'
+    mainArtifact(jar) {
+        displayName = jar.archiveName.replace(".jar", "")
+    }
+    addArtifact(sourceJar) {
+        displayName = sourceJar.archiveName.replace(".jar", "")
+        changelog = "*This is a file for mod developers. If you don't know what to do with it, don't use it!*"
+    }
+    addArtifact(deobfJar) {
+        displayName = deobfJar.archiveName.replace(".jar", "")
+        changelog = "*This is a file for mod developers. If you don't know what to do with it, don't use it!*"
+    }
+  }
+}
+
+modsIO {
+    key = project.hasProperty("modsioApiKey")? project.modsioApiKey : "empty"
+    project{
+		artifact = new File(jar.destinationDir, archivesBaseName+"-"+version+".jar")
+		modid = "1239"
+		minecraft = "1.8.9"
+		try{changelog = file('changelog.txt').text}catch(Exception e){changelog=""}
+		tag = "beta"
+		current = true
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            if (project.hasProperty("local_maven")) {
+                repository(url: "file://${local_maven}")
+                pom {
+                    groupId = project.group
+                    version = project.version
+                    artifactId = project.archivesBaseName
+                    project {
+                        name project.archivesBaseName
+                        packaging "jar"
+                        description "UHC Compass"
+                        url "https://github.com/The-Fireplace/UHC-Compass"
+                        issueManagement {
+                            system "github"
+                            url "https://github.com/The-Fireplace/UHC-Compass/issues"
+                        }
+                        licenses {
+                            license {
+                                name "License"
+                                url "https://github.com/The-Fireplace/UHC-Compass/blob/master/LICENSE"
+                                distribution "repo"
+                            }
+                        }
+                        developers {
+                            developer {
+                                id "fireplace"
+                                name "The_Fireplace"
+                                roles {
+                                    role "owner"
+                                    role "developer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

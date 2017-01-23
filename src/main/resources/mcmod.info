@@ -1,0 +1,16 @@
+[
+{
+  "modid": "uhccompass",
+  "name": "UHC-Compass",
+  "description": "Adds a compass to the HUD that points to a user-set waypoint",
+  "version": "${version}",
+  "mcversion": "",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["The_Fireplace"],
+  "credits": "Pyrhex for requesting that this be made",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
