@@ -12,4 +12,7 @@ uhc.yalignment=Y Alignment
 uhc.yalignment.tooltip=The justification used to align the compass's Y value, useful when resizing the screen
 
 key.movecompass.desc=Open the compass movement screen
+key.quickcoords.desc=Allows you to quickly set coordinates
 key.uhccompass.category=UHC-Compass
+
+uhccompass.invalidcoords=Error: A coordinate you entered was invalid. Please try again.
