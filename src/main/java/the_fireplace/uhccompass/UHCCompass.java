@@ -18,10 +18,10 @@ import the_fireplace.uhccompass.render.RenderEvents;
 /**
  * @author The_Fireplace
  */
-@Mod(modid=UHCCompass.MODID, name=UHCCompass.MODNAME, guiFactory = "the_fireplace.uhccompass.config.UHCCompassGuiFactory", clientSideOnly = true, canBeDeactivated = true)
+@Mod(modid=UHCCompass.MODID, name=UHCCompass.MODNAME, guiFactory = "the_fireplace.uhccompass.config.UHCCompassGuiFactory", clientSideOnly = true, canBeDeactivated = true, updateJSON = "http://thefireplace.bitnamiapp.com/jsons/uhccompass.json")
 public class UHCCompass {
     public static final String MODID = "uhccompass";
-    public static final String MODNAME = "UHC-Compass";
+    public static final String MODNAME = "UHC Compass";
 
     public static Configuration config;
     public static Property COMPASSX_PROPERTY;
