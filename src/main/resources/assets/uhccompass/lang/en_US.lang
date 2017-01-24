@@ -10,3 +10,6 @@ uhc.xalignment=X Alignment
 uhc.xalignment.tooltip=The justification used to align the compass's X value, useful when resizing the screen
 uhc.yalignment=Y Alignment
 uhc.yalignment.tooltip=The justification used to align the compass's Y value, useful when resizing the screen
+
+key.movecompass.desc=Open the compass movement screen
+key.uhccompass.category=UHC-Compass

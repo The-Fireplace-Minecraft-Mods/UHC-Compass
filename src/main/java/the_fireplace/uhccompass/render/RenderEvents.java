@@ -2,6 +2,7 @@ package the_fireplace.uhccompass.render;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.TextureStitchEvent;
@@ -51,7 +52,7 @@ public class RenderEvents {
             }
 
             glEnable(32826);
-            glPushMatrix();
+            GlStateManager.pushMatrix();
 
             RenderHelper.enableGUIStandardItemLighting();
 
@@ -60,7 +61,7 @@ public class RenderEvents {
             RenderHelper.disableStandardItemLighting();
             glDisable(GL12.GL_RESCALE_NORMAL);
             glEnable(32826);
-            glPopMatrix();
+            GlStateManager.popMatrix();
         }
     }
 

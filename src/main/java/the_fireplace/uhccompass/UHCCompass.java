@@ -49,12 +49,12 @@ public class UHCCompass {
     public void preInit(FMLPreInitializationEvent event){
         config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
-        COMPASSX_PROPERTY = config.get(Configuration.CATEGORY_GENERAL, ConfigValues.COMPASSX_NAME, ConfigValues.COMPASSX_DEFAULT, I18n.format(ConfigValues.COMPASSX_NAME+".tooltip"));
-        COMPASSY_PROPERTY = config.get(Configuration.CATEGORY_GENERAL, ConfigValues.COMPASSY_NAME, ConfigValues.COMPASSY_DEFAULT, I18n.format(ConfigValues.COMPASSY_NAME+".tooltip"));
+        COMPASSX_PROPERTY = config.get("hidden", ConfigValues.COMPASSX_NAME, ConfigValues.COMPASSX_DEFAULT, I18n.format(ConfigValues.COMPASSX_NAME+".tooltip"));
+        COMPASSY_PROPERTY = config.get("hidden", ConfigValues.COMPASSY_NAME, ConfigValues.COMPASSY_DEFAULT, I18n.format(ConfigValues.COMPASSY_NAME+".tooltip"));
         TARGETX_PROPERTY = config.get(Configuration.CATEGORY_GENERAL, ConfigValues.TARGETX_NAME, ConfigValues.TARGETX_DEFAULT, I18n.format(ConfigValues.TARGETX_NAME+".tooltip"));
         TARGETZ_PROPERTY = config.get(Configuration.CATEGORY_GENERAL, ConfigValues.TARGETZ_NAME, ConfigValues.TARGETZ_DEFAULT, I18n.format(ConfigValues.TARGETZ_NAME+".tooltip"));
-        XALIGNMENT_PROPERTY = config.get(Configuration.CATEGORY_GENERAL, ConfigValues.XALIGNMENT_NAME, ConfigValues.XALIGNMENT_DEFAULT.name(), I18n.format(ConfigValues.XALIGNMENT_NAME+".tooltip"));
-        YALIGNMENT_PROPERTY = config.get(Configuration.CATEGORY_GENERAL, ConfigValues.YALIGNMENT_NAME, ConfigValues.YALIGNMENT_DEFAULT.name(), I18n.format(ConfigValues.YALIGNMENT_NAME+".tooltip"));
+        XALIGNMENT_PROPERTY = config.get("hidden", ConfigValues.XALIGNMENT_NAME, ConfigValues.XALIGNMENT_DEFAULT.name(), I18n.format(ConfigValues.XALIGNMENT_NAME+".tooltip"));
+        YALIGNMENT_PROPERTY = config.get("hidden", ConfigValues.YALIGNMENT_NAME, ConfigValues.YALIGNMENT_DEFAULT.name(), I18n.format(ConfigValues.YALIGNMENT_NAME+".tooltip"));
         syncConfig();
 
         GameRegistry.registerItem(uhccompass);
@@ -62,5 +62,6 @@ public class UHCCompass {
 
         MinecraftForge.EVENT_BUS.register(new ClientEvents());
         MinecraftForge.EVENT_BUS.register(new RenderEvents());
+        MinecraftForge.EVENT_BUS.register(new KeyHandler());
     }
 }
