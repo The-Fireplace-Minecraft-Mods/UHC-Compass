@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL12;
+import the_fireplace.uhccompass.KeyHandler;
 import the_fireplace.uhccompass.UHCCompass;
 import the_fireplace.uhccompass.config.ConfigValues;
 import the_fireplace.uhccompass.config.XJust;
@@ -146,7 +147,7 @@ public class GuiCompassMoving extends GuiScreen {
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException
     {
-        if (keyCode == mc.gameSettings.keyBindInventory.getKeyCode() || keyCode == Keyboard.KEY_RETURN)
+        if (keyCode == mc.gameSettings.keyBindInventory.getKeyCode() || keyCode == Keyboard.KEY_RETURN || keyCode == UHCCompass.instance.keyHandler.getKeyCode(KeyHandler.MOVECOMPASS))
         {
             this.mc.displayGuiScreen(null);
 

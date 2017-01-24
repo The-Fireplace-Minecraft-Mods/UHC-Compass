@@ -23,6 +23,9 @@ public class UHCCompass {
     public static final String MODID = "uhccompass";
     public static final String MODNAME = "UHC Compass";
 
+    @Mod.Instance(MODID)
+    public static UHCCompass instance;
+
     public static Configuration config;
     public static Property COMPASSX_PROPERTY;
     public static Property COMPASSY_PROPERTY;
@@ -30,6 +33,8 @@ public class UHCCompass {
     public static Property TARGETZ_PROPERTY;
     public static Property XALIGNMENT_PROPERTY;
     public static Property YALIGNMENT_PROPERTY;
+
+    public KeyHandler keyHandler;
 
     public static final Item uhccompass = new Item().setRegistryName("uhccompass").setUnlocalizedName("uhccompass");
 
@@ -62,6 +67,6 @@ public class UHCCompass {
 
         MinecraftForge.EVENT_BUS.register(new ClientEvents());
         MinecraftForge.EVENT_BUS.register(new RenderEvents());
-        MinecraftForge.EVENT_BUS.register(new KeyHandler());
+        MinecraftForge.EVENT_BUS.register(keyHandler = new KeyHandler());
     }
 }

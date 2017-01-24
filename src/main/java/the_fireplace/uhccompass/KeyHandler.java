@@ -35,4 +35,8 @@ public class KeyHandler {
             Minecraft.getMinecraft().displayGuiScreen(new GuiCompassMoving());
         }
     }
+
+    public int getKeyCode(int keyBind){
+        return keys[keyBind].getKeyCode();
+    }
 }
