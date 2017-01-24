@@ -1,4 +1,4 @@
-package the_fireplace.uhccompass;
+package the_fireplace.uhccompass.render;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;

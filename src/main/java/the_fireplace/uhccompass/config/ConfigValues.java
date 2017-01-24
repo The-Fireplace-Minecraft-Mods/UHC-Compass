@@ -1,8 +1,5 @@
 package the_fireplace.uhccompass.config;
 
-import the_fireplace.uhccompass.XJust;
-import the_fireplace.uhccompass.YJust;
-
 /**
  * @author The_Fireplace
  */

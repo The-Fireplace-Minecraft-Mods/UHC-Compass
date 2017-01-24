@@ -1,4 +1,4 @@
-package the_fireplace.uhccompass;
+package the_fireplace.uhccompass.config;
 
 /**
  * @author The_Fireplace

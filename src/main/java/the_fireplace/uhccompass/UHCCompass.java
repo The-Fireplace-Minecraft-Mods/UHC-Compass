@@ -11,6 +11,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import the_fireplace.uhccompass.config.ConfigValues;
+import the_fireplace.uhccompass.config.XJust;
+import the_fireplace.uhccompass.config.YJust;
+import the_fireplace.uhccompass.render.RenderEvents;
 
 /**
  * @author The_Fireplace
@@ -58,5 +61,6 @@ public class UHCCompass {
         ModelLoader.setCustomModelResourceLocation(uhccompass, 0, new ModelResourceLocation(MODID+":uhccompass", "inventory"));
 
         MinecraftForge.EVENT_BUS.register(new ClientEvents());
+        MinecraftForge.EVENT_BUS.register(new RenderEvents());
     }
 }
