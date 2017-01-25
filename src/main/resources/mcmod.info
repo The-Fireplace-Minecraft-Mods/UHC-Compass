@@ -4,7 +4,7 @@
   "name": "UHC Compass",
   "description": "Adds a compass to the HUD that points to a user-set waypoint",
   "version": "${version}",
-  "mcversion": "1.9.4",
+  "mcversion": "1.11.2",
   "url": "https://mods.curse.com/mc-mods/minecraft/257921-uhc-compass",
   "updateUrl": "https://mods.curse.com/mc-mods/minecraft/257921-uhc-compass",
   "authorList": ["The_Fireplace"],

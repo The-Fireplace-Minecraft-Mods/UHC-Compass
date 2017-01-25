@@ -20,10 +20,10 @@ public class GuiCoords extends GuiChat {
         super.initGui();
         this.inputField.setCanLoseFocus(true);
         this.inputField.setFocused(false);
-        xCoord = new GuiTextField(0, this.fontRendererObj, 2, height/2-20-this.inputField.height, 100, 20);
+        xCoord = new GuiTextField(0, this.fontRenderer, 2, height/2-20-this.inputField.height, 100, 20);
         xCoord.setFocused(true);
         xCoord.setMaxStringLength(16);
-        zCoord = new GuiTextField(1, this.fontRendererObj, 104, height/2-20-this.inputField.height, 100, 20);
+        zCoord = new GuiTextField(1, this.fontRenderer, 104, height/2-20-this.inputField.height, 100, 20);
         zCoord.setMaxStringLength(16);
     }
 
