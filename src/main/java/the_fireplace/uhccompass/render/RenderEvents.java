@@ -5,14 +5,14 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.opengl.GL12;
 import the_fireplace.uhccompass.UHCCompass;
 import the_fireplace.uhccompass.config.ConfigValues;
 
-import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.glDisable;
+import static org.lwjgl.opengl.GL11.glEnable;
 
 /**
  * @author The_Fireplace
@@ -63,10 +63,5 @@ public class RenderEvents {
             glEnable(32826);
             GlStateManager.popMatrix();
         }
-    }
-
-    @SubscribeEvent
-    public void texStitch(TextureStitchEvent.Pre event){
-        event.map.setTextureEntry("uhccompass:builtin/uhccompass", new TextureUHCCompass());
     }
 }

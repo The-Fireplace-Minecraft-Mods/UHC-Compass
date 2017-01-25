@@ -1,7 +1,7 @@
 package the_fireplace.uhccompass;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,7 +36,7 @@ public class UHCCompass {
 
     public KeyHandler keyHandler;
 
-    public static final Item uhccompass = new Item().setRegistryName("uhccompass").setUnlocalizedName("uhccompass");
+    public static final Item uhccompass = new ItemUHCCompass().setRegistryName("uhccompass").setUnlocalizedName("uhccompass");
 
     public static void syncConfig(){
         ConfigValues.COMPASSX = COMPASSX_PROPERTY.getInt();
@@ -62,7 +62,7 @@ public class UHCCompass {
         YALIGNMENT_PROPERTY = config.get("hidden", ConfigValues.YALIGNMENT_NAME, ConfigValues.YALIGNMENT_DEFAULT.name(), I18n.format(ConfigValues.YALIGNMENT_NAME+".tooltip"));
         syncConfig();
 
-        GameRegistry.registerItem(uhccompass);
+        GameRegistry.register(uhccompass);
         ModelLoader.setCustomModelResourceLocation(uhccompass, 0, new ModelResourceLocation(MODID+":uhccompass", "inventory"));
 
         MinecraftForge.EVENT_BUS.register(new ClientEvents());

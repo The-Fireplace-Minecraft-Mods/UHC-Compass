@@ -24,7 +24,7 @@ import static org.lwjgl.opengl.GL11.glEnable;
  * @author The_Fireplace
  */
 public class GuiCompassMoving extends GuiScreen {
-    public static final ResourceLocation compass_texture = new ResourceLocation("textures/items/compass.png");
+    public static final ResourceLocation compass_texture = new ResourceLocation("textures/items/compass_16.png");
     private boolean mouseDown = false;
     private static final int mouseOffset = 8;
 
@@ -72,7 +72,7 @@ public class GuiCompassMoving extends GuiScreen {
             GlStateManager.enableBlend();
             GlStateManager.color(1.0F, 1.0F, 1.0F, 0.5F);
             Minecraft.getMinecraft().getTextureManager().bindTexture(compass_texture);
-            drawModalRectWithCustomSizedTexture(mouseX-mouseOffset, mouseY-mouseOffset, 0, 0, 16, 16, 16, 16*32);
+            drawModalRectWithCustomSizedTexture(mouseX-mouseOffset, mouseY-mouseOffset, 0, 0, 16, 16, 16, 16);
             GlStateManager.resetColor();
             GlStateManager.disableBlend();
         }

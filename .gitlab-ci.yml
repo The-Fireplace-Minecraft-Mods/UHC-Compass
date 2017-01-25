@@ -2,8 +2,8 @@ variables:
   CACHE_DIR: "$CI_PROJECT_DIR/build"
   CACHE_DIR2: "$CI_PROJECT_DIR/.gradle"
   
-  ORIG_ARTIFACTS: "$CI_PROJECT_DIR/build/libs/UHCCompass-1.8.9-*.jar"
-  ARTIFACTS: "$CI_PROJECT_DIR/UHCCompass-1.8.9-*.jar"
+  ORIG_ARTIFACTS: "$CI_PROJECT_DIR/build/libs/UHCCompass-1.9.4-*.jar"
+  ARTIFACTS: "$CI_PROJECT_DIR/UHCCompass-1.9.4-*.jar"
 
 cache:
  paths:
@@ -23,6 +23,6 @@ deploy:
   - cp $ORIG_ARTIFACTS .
   when: manual
   artifacts:
-    name: "UHCCompass-1.8.9-$(cat $CACHE_DIR/.version)"
+    name: "UHCCompass-1.9.4-$(cat $CACHE_DIR/.version)"
     paths:
     - $ARTIFACTS

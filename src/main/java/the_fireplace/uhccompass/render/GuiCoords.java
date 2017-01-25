@@ -2,7 +2,7 @@ package the_fireplace.uhccompass.render;
 
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiTextField;
-import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.text.TextComponentTranslation;
 import org.lwjgl.input.Keyboard;
 import the_fireplace.uhccompass.KeyHandler;
 import the_fireplace.uhccompass.UHCCompass;
@@ -45,7 +45,7 @@ public class GuiCoords extends GuiChat {
                 UHCCompass.TARGETX_PROPERTY.set(x);
                 UHCCompass.TARGETZ_PROPERTY.set(z);
             }catch(Exception e){
-                mc.thePlayer.addChatMessage(new ChatComponentTranslation("uhccompass.invalidcoords"));
+                mc.thePlayer.addChatMessage(new TextComponentTranslation("uhccompass.invalidcoords"));
             }
             UHCCompass.syncConfig();
 

@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ClientEvents {
     @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-        if(eventArgs.modID.equals(UHCCompass.MODID))
+        if(eventArgs.getModID().equals(UHCCompass.MODID))
             UHCCompass.syncConfig();
     }
 }
