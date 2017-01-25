@@ -45,7 +45,7 @@ public class GuiCoords extends GuiChat {
                 UHCCompass.TARGETX_PROPERTY.set(x);
                 UHCCompass.TARGETZ_PROPERTY.set(z);
             }catch(Exception e){
-                mc.thePlayer.addChatMessage(new TextComponentTranslation("uhccompass.invalidcoords"));
+                mc.player.sendMessage(new TextComponentTranslation("uhccompass.invalidcoords"));
             }
             UHCCompass.syncConfig();
 

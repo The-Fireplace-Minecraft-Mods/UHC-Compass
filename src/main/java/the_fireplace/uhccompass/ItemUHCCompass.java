@@ -32,11 +32,11 @@ public class ItemUHCCompass extends Item
             @Override
             public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn)
             {
-                    Entity entity = Minecraft.getMinecraft().thePlayer;
+                    Entity entity = Minecraft.getMinecraft().player;
 
                     if (worldIn == null)
                     {
-                        worldIn = entity.worldObj;
+                        worldIn = entity.world;
                     }
 
                     double d0;
