@@ -90,7 +90,7 @@ curseforge {
   project {
     id = '257921'
     changelog = file('changelog.txt')
-    releaseType = 'beta'
+    releaseType = 'release'
     addGameVersion '1.8.9'
 	addGameVersion 'Java 8'
     mainArtifact(jar) {
@@ -114,8 +114,8 @@ modsIO {
 		modid = "1254"
 		minecraft = "1.8.9"
 		try{changelog = file('changelog.txt').text}catch(Exception e){changelog=""}
-		tag = "beta"
-		current = true
+		tag = ""
+		current = false
     }
 }
 
