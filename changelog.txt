@@ -1,1 +1,2 @@
-Initial Release
+Fixed compass spazzing in non-overworld dimensions
+Fixed UHC compass showing in JEI

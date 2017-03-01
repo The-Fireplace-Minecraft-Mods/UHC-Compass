@@ -24,7 +24,7 @@ apply plugin: 'net.cazzar.gradle.modsio'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version = "1.0.0"
+version = "1.0.1"
 group= "the_fireplace.uhccompass"
 archivesBaseName = "UHCCompass-1.11.2"
 
@@ -38,6 +38,16 @@ minecraft {
     runDir = "run"
     replace '${version}', project.version
     mappings = "snapshot_20170125"
+}
+
+dependencies {
+	deobfCompile group: "mezz.jei", name: "jei_1.11.2", version: "4.2.3.223"
+}
+
+repositories{
+    maven { //JEI, Natura, Mantle, TiCon
+        url "http://dvs1.progwml6.com/files/maven"
+    }
 }
 
 processResources

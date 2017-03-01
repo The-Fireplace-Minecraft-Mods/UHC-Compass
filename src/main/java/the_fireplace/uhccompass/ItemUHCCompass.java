@@ -32,29 +32,20 @@ public class ItemUHCCompass extends Item
             @Override
             public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn)
             {
-                    Entity entity = Minecraft.getMinecraft().player;
+                Entity entity = Minecraft.getMinecraft().player;
 
-                    if (worldIn == null)
-                    {
-                        worldIn = entity.world;
-                    }
+                if (worldIn == null)
+                    worldIn = entity.world;
 
-                    double d0;
+                double d0;
 
-                    if (worldIn.provider.isSurfaceWorld())
-                    {
-                        double d1 = (double)entity.rotationYaw;
-                        d1 = d1 % 360.0D;
-                        double d2 = this.getSpawnToAngle(worldIn, entity);
-                        d0 = Math.PI - ((d1 - 90.0D) * 0.01745329238474369D - d2);
-                    }
-                    else
-                    {
-                        d0 = Math.random() * (Math.PI * 2D);
-                    }
+                double d1 = (double)entity.rotationYaw;
+                d1 = d1 % 360.0D;
+                double d2 = this.getSpawnToAngle(worldIn, entity);
+                d0 = Math.PI - ((d1 - 90.0D) * 0.01745329238474369D - d2);
 
-                    float f = (float)(d0 / (Math.PI * 2D));
-                    return MathHelper.positiveModulo(f, 1.0F);
+                float f = (float)(d0 / (Math.PI * 2D));
+                return MathHelper.positiveModulo(f, 1.0F);
             }
             @SideOnly(Side.CLIENT)
             private double getSpawnToAngle(World p_185092_1_, Entity p_185092_2_)
