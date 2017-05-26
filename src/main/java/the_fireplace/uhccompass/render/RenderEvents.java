@@ -55,11 +55,11 @@ public class RenderEvents {
             GlStateManager.pushMatrix();
 
             RenderHelper.enableGUIStandardItemLighting();
+            glDisable(GL12.GL_RESCALE_NORMAL);
 
             mc.getRenderItem().renderItemIntoGUI(new ItemStack(UHCCompass.uhccompass), xPos, yPos);
 
             RenderHelper.disableStandardItemLighting();
-            glDisable(GL12.GL_RESCALE_NORMAL);
             glEnable(32826);
             GlStateManager.popMatrix();
         }
